@@ -128,6 +128,9 @@ Available conditions:
 - `task_type: frontend`
 - `task_type: backend`
 
+**Always:**
+- `always` — trigger on every message
+
 **Custom:**
 - Custom regex
 - Custom description (AI-judged)

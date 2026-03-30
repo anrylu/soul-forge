@@ -158,9 +158,12 @@ What triggers this character? (comma-separate for multiple)
 7. task_type: frontend
 8. task_type: backend
 
+[Always]
+9. always — trigger on every message
+
 [Custom]
-9. Custom regex
-10. Custom description (AI-judged)
+10. Custom regex
+11. Custom description (AI-judged)
 
 Choose:
 ```
