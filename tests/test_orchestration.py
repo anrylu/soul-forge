@@ -105,3 +105,36 @@ def test_generate_block_empty_dir(tmp_path: Path):
     block = generate_orchestration_block(agents_dir)
     assert "Main Agent: none" in block
     assert "No sub-agents configured" in block
+
+
+AGENT_ALWAYS = """---
+name: dio-teacher
+personality:
+  source: url
+  reference: "DIO — JoJo"
+expertise: english-teacher
+role: sub
+relationship: enemy
+attitude: null
+behavior:
+  trigger_mode: auto
+trigger:
+  conditions:
+    - always
+  execution_mode: after_main
+  output_section: "English Correction"
+---
+
+Always-on agent.
+"""
+
+
+def test_generate_block_always_trigger(tmp_path: Path):
+    agents_dir = tmp_path / "agents"
+    agents_dir.mkdir()
+    (agents_dir / "dio-teacher.md").write_text(AGENT_ALWAYS)
+
+    block = generate_orchestration_block(agents_dir)
+    assert "ALWAYS trigger on EVERY message" in block
+    assert "dio-teacher" in block
+    assert "MUST appear in EVERY response" in block
