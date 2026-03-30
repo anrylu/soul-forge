@@ -97,3 +97,8 @@ def platforms():
         table.add_row(p.id, p.name, p.commands_path, p.config_file)
 
     console.print(table)
+
+
+from soul_forge.cli_template import template  # noqa: E402
+
+cli.add_command(template)
