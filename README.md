@@ -72,26 +72,58 @@ Once installed, these commands are available in your AI agent:
 8. **Fine-tuning** — Optional attitude override
 9. **Storage** — Project-level or global
 
-### 2. Automatic Orchestration
+### 2. Example Party
 
-Sub-agents with auto triggers activate based on conditions:
+Here's what a team of anime-powered agents might look like:
+
+| Agent | Personality | Expertise | Relationship | Trigger |
+|-------|------------|-----------|--------------|---------|
+| jotaro-sensei | Jotaro Kujo (JoJo's Bizarre Adventure) | Japanese Teacher | mentor | `contains_japanese` |
+| dio-teacher | DIO (JoJo's Bizarre Adventure) | English Teacher | enemy | `contains_english` |
+| josuke-backend | Higashikata Josuke (JoJo Part 4) | Backend Developer | friend | `task_type: backend` |
+| misaka-reviewer | Misaka Mikoto (A Certain Scientific Railgun) | Code Reviewer | rival | `contains_code` |
+
+### 3. Automatic Orchestration
+
+Sub-agents with auto triggers activate based on conditions. Imagine you ask: "幫我寫一個 REST API for user authentication"
 
 ```
 [Main Response]
-Your system can be designed like this...
+Here's the REST API design for user authentication...
 
 ---
 
-[Architecture Review — jiraiya-architect]
-Heh, not bad kid. But let me tell you about scalability...
+[Backend Review — josuke-backend]
+グレートだぜ！But let me fix this up real nice.
+Your auth endpoint should use bcrypt for password hashing,
+and don't forget rate limiting on /login...
 
 ---
 
-[English Correction — english-teacher]
-"I want design system" -> "I want to design a system"
+[Code Review — misaka-reviewer]
+Hmph, not bad... but I found 3 issues. Don't think I'm
+doing this for you or anything.
+1. SQL injection risk in the query builder
+2. Missing input validation on email format
+3. JWT secret should come from env, not hardcoded
+
+---
+
+[Japanese — jotaro-sensei]
+「幫我寫」は中国語だな。日本語では：
+「ユーザー認証用のREST APIを書いてください」
+やれやれだぜ... 「寫」じゃなくて「書いて」だ。
+
+---
+
+[English — dio-teacher]
+You thought you could write English without me, DIO?
+MUDA MUDA MUDA!
+"Help me write a REST API for user authentication"
+- "Help me write" not "幫我寫" — you SHALL speak English!
 ```
 
-### 3. Agent File Format
+### 4. Agent File Format
 
 Agents are stored as markdown files with YAML frontmatter:
 
