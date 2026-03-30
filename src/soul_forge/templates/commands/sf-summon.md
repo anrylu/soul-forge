@@ -84,9 +84,47 @@ What is this character's relationship to you?
 1. mentor — master-apprentice, proactive guidance
 2. friend — equal partners, casual interaction
 3. enemy — adversarial challenger, questions your decisions
+4. rival — competitive peer, pushes you to be better
+5. servant — loyal subordinate, fully obedient
+6. senior — experienced elder, respectful but assertive
+7. junior — eager learner, humble and curious
+8. partner — complementary collaborator, fills your gaps
+9. custom — describe your own relationship
 
-Choose (1/2/3):
+Choose (1-9):
 ```
+
+If custom, ask the user to describe the relationship dynamic in their own words. Use that description to shape the agent's interaction style.
+
+## Step 5b: Response Language
+
+```
+Step 5b: Response Language
+What language should this character respond in?
+
+1. Auto — match the language of the conversation (default)
+2. Chinese (中文)
+3. English
+4. Japanese (日本語)
+
+Choose (1-4):
+```
+
+Default is Auto if the user skips or picks 1.
+
+**Special behavior for language teachers:**
+
+If the agent's expertise is English Teacher or Japanese Teacher, this setting is ignored — language teachers follow their own rules:
+
+- **English Teacher:**
+  - If the conversation contains English → correct grammar, explain usage, teach English
+  - If the conversation is NOT in English → explain how to translate the content into English
+
+- **Japanese Teacher:**
+  - If the conversation contains Japanese → correct grammar, explain usage, teach Japanese
+  - If the conversation is NOT in Japanese → explain how to translate the content into Japanese
+
+Include this behavior rule in the generated agent file's `## Behavior` section for language teacher agents.
 
 ## Step 6a: Trigger Mode (Sub-agent only)
 
@@ -178,7 +216,9 @@ personality:
   url: "{url if applicable}"
 expertise: {expertise-id}
 role: {main|sub}
-relationship: {mentor|friend|enemy}
+relationship: {mentor|friend|enemy|rival|servant|senior|junior|partner|custom}
+relationship_description: "{custom description, if relationship is custom}"
+response_language: {auto|zh|en|ja}
 attitude: {null or chosen value}
 behavior:
   trigger_mode: {auto|manual}
