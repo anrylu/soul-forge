@@ -1,3 +1,5 @@
+[English](/README.md) | [繁體中文](/README.zh-tw.md) | [简体中文](/README.zh-cn.md) | [日本語](/README.ja.md)
+
 # Soul Forge
 
 RPG-style character creation system for AI agents. Create, configure, and orchestrate AI agent personas with personality, expertise, and automatic trigger-based collaboration.
