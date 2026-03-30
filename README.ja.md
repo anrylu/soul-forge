@@ -2,31 +2,45 @@
 
 # Soul Forge
 
-RPGスタイルのAI Agentキャラクター作成システム。パーソナリティ、専門分野、自動トリガー連携でAI Agentペルソナを作成・設定・オーケストレーション。
+**AIエージェントに個性を。** RPGスタイルのキャラクター作成システム — Claude Code、Gemini CLI、Copilotなどに対応。
 
-## 特徴
+[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
+[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **RPGキャラクター作成** — インタラクティブなウィザードでパーソナリティ＋専門分野を持つAgentを鍛造
-- **マルチAgent連携** — メインAgent＋サブAgent、宣言的トリガー条件付き
-- **マルチプラットフォーム対応** — Claude Code、Gemini CLI、Codex、GitHub Copilot、OpenCode
-- **パーソナリティソース** — プリセットスタイル、URL/キャラクター抽出、カスタム記述
-- **8種類の専門テンプレート** — バックエンド、フロントエンド、DevOps、コードレビュー、QA、アーキテクチャ、英語、日本語
-
-## クイックスタート
+## 3ステップで始める
 
 ```bash
-# プロジェクトにインストール
-uvx soul-forge init
-
-# AI Agentプラットフォームを選択後、スラッシュコマンドを使用：
-/sf-summon     # 新しいキャラクターを作成
-/sf-party      # Agentの一覧を表示
+uvx soul-forge init    # プラットフォームを選択
+/sf-summon             # 最初のキャラクターを召喚
+/sf-party              # パーティを表示
 ```
+
+## なぜ Soul Forge？
+
+- **マルチエージェント連携** — 一つのプロンプトで複数のエキスパートAgentが起動、それぞれ独自のスタイルと個性で応答
+- **RPGキャラクターシステム** — RPGパーティのようにAIエージェントを管理：召喚、束縛、融合、追放
+- **5プラットフォーム、1つの設定** — Claude Code、Gemini CLI、Codex、GitHub Copilot、OpenCode — ベンダーロックインなし
+- **ピュアプロンプト駆動** — APIキー不要、外部サービス不要、追加依存なし
+
+## 実際の動作
+
+質問：_「幫我寫一個 REST API for user authentication」_ — パーティの応答：
+
+| Agent | パーソナリティ | 役割 | 内容 |
+|-------|---------------|------|------|
+| **josuke-backend** | 東方仗助（ジョジョ第4部） | バックエンド開発 | API設計レビュー、bcrypt＋レート制限を提案 |
+| **misaka-reviewer** | 御坂美琴（超電磁砲） | コードレビュアー | SQLインジェクション、バリデーション不足、ハードコードされた秘密鍵を検出 |
+| **jotaro-sensei** | 空条承太郎（ジョジョ） | 日本語教師 | 日本語の文法を添削 |
+| **dio-teacher** | DIO（ジョジョ） | 英語教師 | ...ドラマチックに翻訳 |
+
+各サブAgentはトリガー条件に基づいて自動起動 — 言語検出、コード、タスクタイプ、カスタムルール。
 
 ## インストール
 
 ```bash
-# uvx経由（推奨）
+# uvx経由（推奨、インストール不要）
 uvx soul-forge init
 
 # またはグローバルインストール
@@ -34,19 +48,7 @@ pip install soul-forge
 soul-forge init
 ```
 
-## CLIコマンド
-
-| コマンド | 説明 |
-|----------|------|
-| `soul-forge init` | 対象プラットフォームにコマンドをインストール |
-| `soul-forge update` | コマンドを更新しオーケストレーションを同期 |
-| `soul-forge platforms` | サポートプラットフォームの一覧 |
-| `soul-forge template list` | 利用可能なテンプレートの一覧 |
-| `soul-forge template add <url\|path>` | カスタムテンプレートを追加 |
-
 ## スラッシュコマンド
-
-インストール後、AI Agentで以下のコマンドが使用可能：
 
 | コマンド | RPGの意味 | 機能 |
 |----------|-----------|------|
@@ -60,7 +62,7 @@ soul-forge init
 
 ## 仕組み
 
-### 1. キャラクター作成
+### キャラクター作成
 
 `/sf-summon` でウィザードを進行：
 
@@ -69,63 +71,12 @@ soul-forge init
 3. **命名** — 自動提案またはカスタム
 4. **役割** — メインAgentまたはサブAgent
 5. **関係性** — 師匠、友人、敵、ライバル、従者、先輩、後輩、パートナー、カスタム
-6. **応答言語** — 自動（会話に合わせる）、中国語、英語、日本語
+6. **応答言語** — 自動、中国語、英語、日本語
 7. **トリガーモード** — 自動または手動（サブAgentのみ）
 8. **微調整** — オプションの態度オーバーライド
 9. **保存先** — プロジェクトレベルまたはグローバル
 
-### 2. パーティの例
-
-アニメキャラクターで構成されたAgentチーム：
-
-| Agent | パーソナリティ | 専門分野 | 関係性 | トリガー |
-|-------|---------------|----------|--------|----------|
-| jotaro-sensei | 空条承太郎（ジョジョの奇妙な冒険） | 日本語教師 | 師匠 | `contains_japanese` |
-| dio-teacher | DIO（ジョジョの奇妙な冒険） | 英語教師 | 敵 | `contains_english` |
-| josuke-backend | 東方仗助（ジョジョ第4部） | バックエンド開発 | 友人 | `task_type: backend` |
-| misaka-reviewer | 御坂美琴（とある科学の超電磁砲） | コードレビュアー | ライバル | `contains_code` |
-
-### 3. 自動オーケストレーション
-
-自動トリガー付きのサブAgentは条件に基づいて起動。例えば「幫我寫一個 REST API for user authentication」と聞くと：
-
-```
-[メイン応答]
-ユーザー認証のREST API設計です...
-
----
-
-[バックエンドレビュー — josuke-backend]
-グレートだぜ！俺がキレイに直してやるよ。
-認証エンドポイントはbcryptでパスワードハッシュすべきだし、
-/loginにレート制限も忘れんなよ...
-
----
-
-[コードレビュー — misaka-reviewer]
-ふん、悪くはないわね... でも3つ問題を見つけたわ。
-別にアンタのためにやってるわけじゃないんだからね。
-1. クエリビルダーにSQLインジェクションのリスク
-2. メール形式の入力バリデーションが未実装
-3. JWTシークレットは環境変数から取得すべき、ハードコードはダメ
-
----
-
-[日本語 — jotaro-sensei]
-「幫我寫」は中国語だな。日本語では：
-「ユーザー認証用のREST APIを書いてください」
-やれやれだぜ...「寫」じゃなくて「書いて」だ。
-
----
-
-[英語 — dio-teacher]
-You thought you could write English without me, DIO?
-MUDA MUDA MUDA!
-"Help me write a REST API for user authentication"
-- "Help me write" not "幫我寫" — you SHALL speak English!
-```
-
-### 4. Agentファイル形式
+### Agentファイル形式
 
 AgentはYAMLフロントマター付きのmarkdownファイルで保存：
 
@@ -151,6 +102,17 @@ trigger:
 # ... パーソナリティ、専門分野、行動プロンプト
 ```
 
+### 自動オーケストレーション
+
+サブAgentは宣言的条件に基づいて自動起動：
+
+- **言語検出：** `contains_english`、`contains_japanese`、`contains_chinese`
+- **コンテンツタイプ：** `contains_code`、`task_type: backend|frontend|devops|architecture`
+- **無条件：** `always`
+- **カスタム：** 正規表現またはAI判定条件
+
+実行モード：`after_main`、`before_main`、`parallel`
+
 ## 対応プラットフォーム
 
 | プラットフォーム | コマンドパス | 設定ファイル |
@@ -160,6 +122,19 @@ trigger:
 | Codex | `.codex/commands/` | `AGENTS.md` |
 | GitHub Copilot | `.github/copilot/commands/` | `.github/copilot-instructions.md` |
 | OpenCode | `.opencode/commands/` | `AGENTS.md` |
+
+## サンプル
+
+[`examples/`](examples/) ディレクトリにすぐ使えるパーティ構成があります：
+
+- [**fullstack-team**](examples/fullstack-team/) — フロントエンド＋バックエンド＋コードレビュアーのパーティ
+- [**language-tutors**](examples/language-tutors/) — アニメキャラクター駆動の英語＋日本語教師
+
+## コントリビュート
+
+コントリビュート歓迎！[CONTRIBUTING.md](CONTRIBUTING.md) をご覧ください。
+
+最も簡単な貢献方法は専門テンプレートの追加 — markdownファイル1つだけです！
 
 ## 開発
 
