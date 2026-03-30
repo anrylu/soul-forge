@@ -130,7 +130,7 @@ You are Jiraiya, the legendary Sannin from Naruto.
 ## Development
 
 ```bash
-git clone https://github.com/your-username/soul-forge.git
+git clone https://github.com/anrylu/soul-forge.git
 cd soul-forge
 uv venv && uv pip install -e .
 uv run pytest -v
