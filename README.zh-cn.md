@@ -2,31 +2,45 @@
 
 # Soul Forge
 
-RPG 风格的 AI Agent 角色创建系统。通过人格、专长与自动触发协作，创建、配置并协调 AI Agent 角色。
+**赋予 AI Agent 独特人格。** RPG 风格角色创建系统，支持 Claude Code、Gemini CLI、Copilot 等平台。
 
-## 特色
+[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
+[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-- **RPG 角色创建** — 交互式向导引导，打造具有人格 + 专长的 Agent
-- **多 Agent 协作** — 主 Agent + 子 Agent，搭配声明式触发条件
-- **多平台支持** — Claude Code、Gemini CLI、Codex、GitHub Copilot、OpenCode
-- **人格来源** — 预设风格、URL/角色提取、或自定义描述
-- **8 种内置专长模板** — 后端、前端、DevOps、Code Review、QA、架构、英语、日语
-
-## 快速开始
+## 3 步上手
 
 ```bash
-# 安装到你的项目
-uvx soul-forge init
-
-# 选择 AI Agent 平台后，使用斜杠命令：
-/sf-summon     # 创建新角色
-/sf-party      # 查看角色列表
+uvx soul-forge init    # 选择你的平台
+/sf-summon             # 召唤你的第一个角色
+/sf-party              # 查看你的队伍
 ```
+
+## 为什么选择 Soul Forge？
+
+- **多 Agent 协作** — 一个提示同时触发多个专家 Agent，各自用独特的风格和人格回复
+- **RPG 角色系统** — 像管理 RPG 队伍一样管理 AI Agent：召唤、绑定、融合、放逐
+- **5 个平台，一套配置** — Claude Code、Gemini CLI、Codex、GitHub Copilot、OpenCode — 不被任何工具绑定
+- **纯 Prompt 驱动** — 不需要 API key、不需要外部服务、不需要额外依赖
+
+## 实际效果
+
+当你问：_"帮我写一个 REST API for user authentication"_ — 你的队伍会这样回复：
+
+| Agent | 人格 | 角色 | 做什么 |
+|-------|------|------|--------|
+| **josuke-backend** | 东方仗助（JoJo 第四部） | 后端开发 | 审查 API 设计，建议 bcrypt + 速率限制 |
+| **misaka-reviewer** | 御坂美琴（科学超电磁炮） | Code Reviewer | 发现 SQL 注入、缺少验证、硬编码密钥 |
+| **jotaro-sensei** | 空条承太郎（JoJo） | 日语老师 | 纠正你的日语语法 |
+| **dio-teacher** | DIO（JoJo） | 英语老师 | 用... 戏剧性的方式翻译 |
+
+每个子 Agent 会根据触发条件自动启动 — 语言检测、代码、任务类型、或自定义规则。
 
 ## 安装
 
 ```bash
-# 通过 uvx（推荐）
+# 通过 uvx（推荐，不需安装）
 uvx soul-forge init
 
 # 或全局安装
@@ -34,19 +48,7 @@ pip install soul-forge
 soul-forge init
 ```
 
-## CLI 命令
-
-| 命令 | 说明 |
-|------|------|
-| `soul-forge init` | 安装命令到目标平台 |
-| `soul-forge update` | 更新命令并同步编排配置 |
-| `soul-forge platforms` | 列出支持的平台 |
-| `soul-forge template list` | 列出可用模板 |
-| `soul-forge template add <url\|path>` | 添加自定义模板 |
-
 ## 斜杠命令
-
-安装后，可在 AI Agent 中使用以下命令：
 
 | 命令 | RPG 含义 | 功能 |
 |------|----------|------|
@@ -60,7 +62,7 @@ soul-forge init
 
 ## 工作原理
 
-### 1. 创建角色
+### 角色创建
 
 `/sf-summon` 引导你完成创角向导：
 
@@ -69,63 +71,12 @@ soul-forge init
 3. **命名** — 自动建议或自定义
 4. **角色定位** — 主 Agent 或子 Agent
 5. **关系** — 师父、朋友、敌人、对手、仆从、前辈、后辈、搭档、或自定义
-6. **回复语言** — 自动（根据对话内容）、中文、英语、或日语
+6. **回复语言** — 自动、中文、英语、或日语
 7. **触发模式** — 自动或手动（仅子 Agent）
 8. **微调** — 可选态度覆盖
 9. **存储位置** — 项目级或全局
 
-### 2. 示例队伍
-
-一支动漫角色驱动的 Agent 团队：
-
-| Agent | 人格 | 专长 | 关系 | 触发条件 |
-|-------|------|------|------|----------|
-| jotaro-sensei | 空条承太郎（JoJo 的奇妙冒险） | 日语老师 | 师父 | `contains_japanese` |
-| dio-teacher | DIO（JoJo 的奇妙冒险） | 英语老师 | 敌人 | `contains_english` |
-| josuke-backend | 东方仗助（JoJo 第四部） | 后端开发 | 朋友 | `task_type: backend` |
-| misaka-reviewer | 御坂美琴（科学超电磁炮） | Code Reviewer | 对手 | `contains_code` |
-
-### 3. 自动协作
-
-子 Agent 会根据触发条件自动启动。假设你问："帮我写一个 REST API for user authentication"
-
-```
-[主回复]
-以下是用户认证的 REST API 设计...
-
----
-
-[后端审查 — josuke-backend]
-グレートだぜ！让我来好好修一下。
-你的认证端点应该用 bcrypt 做密码哈希，
-别忘了在 /login 加上速率限制...
-
----
-
-[代码审查 — misaka-reviewer]
-哼，还不差嘛... 不过我找到 3 个问题。
-才不是为了你才做的呢。
-1. 查询构建器有 SQL 注入风险
-2. 缺少 email 格式的输入验证
-3. JWT secret 应该从环境变量获取，不要硬编码
-
----
-
-[日语 — jotaro-sensei]
-「帮我写」は中国語だな。日本語では：
-「ユーザー認証用のREST APIを書いてください」
-やれやれだぜ...「写」じゃなくて「書いて」だ。
-
----
-
-[英语 — dio-teacher]
-You thought you could write English without me, DIO?
-MUDA MUDA MUDA!
-"Help me write a REST API for user authentication"
-- "Help me write" not "帮我写" — you SHALL speak English!
-```
-
-### 4. Agent 文件格式
+### Agent 文件格式
 
 Agent 以带有 YAML frontmatter 的 markdown 文件存储：
 
@@ -151,6 +102,17 @@ trigger:
 # ... 人格、专长和行为提示
 ```
 
+### 自动协作
+
+子 Agent 会根据声明式条件自动启动：
+
+- **语言检测：** `contains_english`、`contains_japanese`、`contains_chinese`
+- **内容类型：** `contains_code`、`task_type: backend|frontend|devops|architecture`
+- **无条件：** `always`
+- **自定义：** 正则表达式或 AI 判断条件
+
+执行模式：`after_main`、`before_main`、`parallel`
+
 ## 支持平台
 
 | 平台 | 命令路径 | 配置文件 |
@@ -160,6 +122,19 @@ trigger:
 | Codex | `.codex/commands/` | `AGENTS.md` |
 | GitHub Copilot | `.github/copilot/commands/` | `.github/copilot-instructions.md` |
 | OpenCode | `.opencode/commands/` | `AGENTS.md` |
+
+## 示例
+
+查看 [`examples/`](examples/) 目录中现成的队伍配置：
+
+- [**fullstack-team**](examples/fullstack-team/) — 前端 + 后端 + Code Reviewer 队伍
+- [**language-tutors**](examples/language-tutors/) — 动漫角色驱动的英语 + 日语老师
+
+## 贡献
+
+欢迎贡献！详见 [CONTRIBUTING.md](CONTRIBUTING.md)。
+
+最简单的贡献方式是添加新的专长模板 — 只需写一个 markdown 文件！
 
 ## 开发
 
