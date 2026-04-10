@@ -4,8 +4,8 @@
 
 **赋予 AI Agent 独特人格。** RPG 风格角色创建系统，支持 Claude Code、Gemini CLI、Copilot 等平台。
 
-[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
-[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![PyPI version](https://img.shields.io/pypi/v/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
+[![Python](https://img.shields.io/pypi/pyversions/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
 [![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

@@ -73,8 +73,8 @@ Replace the entire `README.md` with:
 
 **Summon AI agents with personality.** RPG-style character creation for Claude Code, Gemini CLI, Copilot & more.
 
-[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
-[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![PyPI version](https://img.shields.io/pypi/v/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
+[![Python](https://img.shields.io/pypi/pyversions/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
 [![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -253,8 +253,8 @@ Replace the entire file with:
 
 **賦予 AI Agent 獨特人格。** RPG 風格角色創建系統，支援 Claude Code、Gemini CLI、Copilot 等平台。
 
-[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
-[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![PyPI version](https://img.shields.io/pypi/v/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
+[![Python](https://img.shields.io/pypi/pyversions/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
 [![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -426,8 +426,8 @@ Replace the entire file with:
 
 **赋予 AI Agent 独特人格。** RPG 风格角色创建系统，支持 Claude Code、Gemini CLI、Copilot 等平台。
 
-[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
-[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![PyPI version](https://img.shields.io/pypi/v/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
+[![Python](https://img.shields.io/pypi/pyversions/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
 [![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -599,8 +599,8 @@ Replace the entire file with:
 
 **AIエージェントに個性を。** RPGスタイルのキャラクター作成システム — Claude Code、Gemini CLI、Copilotなどに対応。
 
-[![PyPI version](https://img.shields.io/pypi/v/soul-forge)](https://pypi.org/project/soul-forge/)
-[![Python](https://img.shields.io/pypi/pyversions/soul-forge)](https://pypi.org/project/soul-forge/)
+[![PyPI version](https://img.shields.io/pypi/v/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
+[![Python](https://img.shields.io/pypi/pyversions/agentsoulforge)](https://pypi.org/project/agentsoulforge/)
 [![CI](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/anrylu/soul-forge/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
