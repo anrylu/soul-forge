@@ -12,7 +12,7 @@
 ## 3ステップで始める
 
 ```bash
-uvx soul-forge init    # プラットフォームを選択
+uvx agentsoulforge init    # プラットフォームを選択
 /sf-summon             # 最初のキャラクターを召喚
 /sf-party              # パーティを表示
 ```
@@ -41,7 +41,7 @@ uvx soul-forge init    # プラットフォームを選択
 
 ```bash
 # uvx経由（推奨、インストール不要）
-uvx soul-forge init
+uvx agentsoulforge init
 
 # またはグローバルインストール
 pip install soul-forge

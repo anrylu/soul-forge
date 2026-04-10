@@ -12,7 +12,7 @@
 ## 3 步上手
 
 ```bash
-uvx soul-forge init    # 選擇你的平台
+uvx agentsoulforge init    # 選擇你的平台
 /sf-summon             # 召喚你的第一個角色
 /sf-party              # 查看你的隊伍
 ```
@@ -41,7 +41,7 @@ uvx soul-forge init    # 選擇你的平台
 
 ```bash
 # 透過 uvx（推薦，不需安裝）
-uvx soul-forge init
+uvx agentsoulforge init
 
 # 或全域安裝
 pip install soul-forge

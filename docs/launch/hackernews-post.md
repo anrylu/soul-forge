@@ -14,6 +14,6 @@ Key design decisions:
 - Platform-agnostic: single template set deploys to all supported platforms
 - Personality/expertise separation: combine any character (fictional or custom) with any expertise role
 
-Install: `uvx soul-forge init`
+Install: `uvx agentsoulforge init`
 
 Built with Python, Click, and Rich. MIT licensed.

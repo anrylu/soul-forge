@@ -15,7 +15,7 @@
 ## Get Started in 3 Steps
 
 ```bash
-uvx soul-forge init    # Pick your platform
+uvx agentsoulforge init    # Pick your platform
 /sf-summon             # Summon your first character
 /sf-party              # View your party
 ```
@@ -44,7 +44,7 @@ Each sub-agent activates automatically based on trigger conditions — language 
 
 ```bash
 # Via uvx (recommended, no install needed)
-uvx soul-forge init
+uvx agentsoulforge init
 
 # Or install globally
 pip install soul-forge

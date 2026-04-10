@@ -19,7 +19,7 @@
 ### 1.2 「3 步上手」區塊
 
 ```bash
-uvx soul-forge init    # 選擇你的平台
+uvx agentsoulforge init    # 選擇你的平台
 /sf-summon             # 召喚你的第一個角色
 /sf-party              # 查看你的隊伍
 ```
@@ -86,7 +86,7 @@ README.zh-tw.md、README.zh-cn.md、README.ja.md 同步更新相同結構。
 ### 3.1 Demo GIF 錄製
 
 - 使用 terminal 錄製工具（vhs 或 asciinema）
-- 30-45 秒流程：`uvx soul-forge init` → `/sf-summon` → party 協作效果
+- 30-45 秒流程：`uvx agentsoulforge init` → `/sf-summon` → party 協作效果
 - 同時用於 README hero 和社群發文
 
 ### 3.2 發佈文案

@@ -16,7 +16,7 @@ I got tired of plain system prompts, so I built **Soul Forge** — an RPG-style 
 **Example:** I have Jotaro Kujo as my Japanese teacher (triggers on Japanese text), DIO as my English teacher (triggers on English), and Misaka Mikoto as my code reviewer (triggers on code). They all respond in character.
 
 ```bash
-uvx soul-forge init    # Pick your platform
+uvx agentsoulforge init    # Pick your platform
 /sf-summon             # Summon your first character
 /sf-party              # View your party
 ```

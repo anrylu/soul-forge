@@ -10,7 +10,7 @@ Soul Forge is an RPG-style character creation system for AI agents. It lets user
 
 ### Python CLI Tool (`soul-forge`)
 
-A Python package executable via `uvx soul-forge`. Responsible for:
+A Python package executable via `uvx agentsoulforge`. Responsible for:
 
 - Installing slash command files to target AI agent platforms
 - Managing orchestration blocks in platform config files

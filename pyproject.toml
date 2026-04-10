@@ -37,6 +37,7 @@ Issues = "https://github.com/anrylu/soul-forge/issues"
 
 [project.scripts]
 soul-forge = "soul_forge.cli:cli"
+agentsoulforge = "soul_forge.cli:cli"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/soul_forge"]

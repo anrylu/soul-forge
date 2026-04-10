@@ -84,7 +84,7 @@ Replace the entire `README.md` with:
 ## Get Started in 3 Steps
 
 ```bash
-uvx soul-forge init    # Pick your platform
+uvx agentsoulforge init    # Pick your platform
 /sf-summon             # Summon your first character
 /sf-party              # View your party
 ```
@@ -113,7 +113,7 @@ Each sub-agent activates automatically based on trigger conditions — language 
 
 ```bash
 # Via uvx (recommended, no install needed)
-uvx soul-forge init
+uvx agentsoulforge init
 
 # Or install globally
 pip install soul-forge
@@ -261,7 +261,7 @@ Replace the entire file with:
 ## 3 步上手
 
 ```bash
-uvx soul-forge init    # 選擇你的平台
+uvx agentsoulforge init    # 選擇你的平台
 /sf-summon             # 召喚你的第一個角色
 /sf-party              # 查看你的隊伍
 ```
@@ -290,7 +290,7 @@ uvx soul-forge init    # 選擇你的平台
 
 ```bash
 # 透過 uvx（推薦，不需安裝）
-uvx soul-forge init
+uvx agentsoulforge init
 
 # 或全域安裝
 pip install soul-forge
@@ -434,7 +434,7 @@ Replace the entire file with:
 ## 3 步上手
 
 ```bash
-uvx soul-forge init    # 选择你的平台
+uvx agentsoulforge init    # 选择你的平台
 /sf-summon             # 召唤你的第一个角色
 /sf-party              # 查看你的队伍
 ```
@@ -463,7 +463,7 @@ uvx soul-forge init    # 选择你的平台
 
 ```bash
 # 通过 uvx（推荐，不需安装）
-uvx soul-forge init
+uvx agentsoulforge init
 
 # 或全局安装
 pip install soul-forge
@@ -607,7 +607,7 @@ Replace the entire file with:
 ## 3ステップで始める
 
 ```bash
-uvx soul-forge init    # プラットフォームを選択
+uvx agentsoulforge init    # プラットフォームを選択
 /sf-summon             # 最初のキャラクターを召喚
 /sf-party              # パーティを表示
 ```
@@ -636,7 +636,7 @@ uvx soul-forge init    # プラットフォームを選択
 
 ```bash
 # uvx経由（推奨、インストール不要）
-uvx soul-forge init
+uvx agentsoulforge init
 
 # またはグローバルインストール
 pip install soul-forge
@@ -1197,7 +1197,7 @@ I got tired of plain system prompts, so I built **Soul Forge** — an RPG-style 
 **Example:** I have Jotaro Kujo as my Japanese teacher (triggers on Japanese text), DIO as my English teacher (triggers on English), and Misaka Mikoto as my code reviewer (triggers on code). They all respond in character.
 
 ```bash
-uvx soul-forge init    # Pick your platform
+uvx agentsoulforge init    # Pick your platform
 /sf-summon             # Summon your first character
 /sf-party              # View your party
 ```
@@ -1228,7 +1228,7 @@ Key design decisions:
 - Platform-agnostic: single template set deploys to all supported platforms
 - Personality/expertise separation: combine any character (fictional or custom) with any expertise role
 
-Install: `uvx soul-forge init`
+Install: `uvx agentsoulforge init`
 
 Built with Python, Click, and Rich. MIT licensed.
 ```
